@@ -1,11 +1,14 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import argparse
+import urllib
 
 parser = argparse.ArgumentParser(description='Enter the website you would like to be scraped')
 parser.add_argument("--site", default=0, type=str, help='Type in the site: ')
 args = parser.parse_args()
-url = args.site
+
+
+url = (args.site)
 page = urlopen(url)
 html = page.read().decode("utf-8")
 soup = BeautifulSoup(html, "html.parser")
