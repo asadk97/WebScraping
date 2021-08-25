@@ -1,4 +1,3 @@
-
 import argparse
 
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
