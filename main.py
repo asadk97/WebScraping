@@ -8,10 +8,10 @@ parser = argparse.ArgumentParser(description='Enter the website you would like t
 parser.add_argument("--site", default=0, type=str, help='Type in the site: ')
 args = parser.parse_args()
 
-#Where the BS takes in the url data and html code
+#Where BeautifulSoup takes in the url data and html code
 url = (args.site)
 page = urlopen(url)
-html = page.read().decode("utf-8")
+html = page.read().decode("utf-8", errors = 'ignore')
 soup = BeautifulSoup(html, "html.parser")
 
 #Creates a text file from the site
