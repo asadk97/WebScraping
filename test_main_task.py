@@ -6,4 +6,4 @@ import pytest
 def test_get_content():
     url = "https://www.google.co.uk"
     soup = get_content(url)
-    assert soup
+    assert "https://" in url
