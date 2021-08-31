@@ -1,9 +1,9 @@
 import pathlib
-import main_task
+from main_task import get_content
+import pytest
 
 
-def test_url():
-    test = main_task.url("www.google.co.uk")
-    url = test.main()
-    assert "https://" in url
-
+def test_get_content():
+    url = "https://www.google.co.uk"
+    soup = get_content(url)
+    assert soup
