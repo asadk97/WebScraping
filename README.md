@@ -10,11 +10,11 @@ A simple web scraping code that takes the data from a website of your choice tha
 
 # Tutorial and Instructions
 
-To run the web scraping simply enter:
+To run the web scraping simply enter in the terminal:
 
-$python main.py --site 
+1. $python main.py --site 
+2. add in the site that you would like to scrape after '--site '
 
-and then add in the site that you would like to scrape after '--site '
 
 
 This branch also contains both the command lines and the unit tests to ensure that the user is able to input the correct site formats
