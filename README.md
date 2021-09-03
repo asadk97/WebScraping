@@ -6,6 +6,7 @@
 
 A simple web scraping code that takes the data from a website of your choice that you enter in yourself, personally I would recommend to copy and paste the website directly into the terminal. It works by the url entered going through the code and then the code would read through the html coding of the page and then take out any unnecessary data such as tags. 
 
+The code also does not allow any sites without the https:// before it. The unit test would then fail if not included
 
 
 ### Tutorial and Instructions
