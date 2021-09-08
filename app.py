@@ -1,26 +1,24 @@
-from flask import (Flask, render_template, abort, jsonify, request,
-                   redirect, url_for)
-from model import db, save_db
+from flask import (Flask, render_template, request,)
+# from model import db, save_db
+import main_task
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def homepage():
-    return render_template(
-        "homepage.html",
-        cards=db
+    if request.method == "GET":
+        return render_template(
+            "index.html"
     )
+    else:
+        url = request.form.get("user_input")
+        soup = main_task.get_content(url)
+        return render_template("results.html", output=soup)
 
 
-@app.route("/api/card/")
-def api_card_list():
-    return jsonify(db)
-
-
-@app.route("/api/card/<int:index>")
-def api_card_detail(index):
-    try:
-        return db[index]
-    except IndexError:
-        abort(404)
+@app.route("/results")
+def results():
+    return render_template(
+        "results.html"
+    )

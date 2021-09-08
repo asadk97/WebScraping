@@ -12,6 +12,9 @@ def get_content(argurl):
     soup = BeautifulSoup(html, "html.parser")
     return soup
 
+def cleanse():
+    # Where the soup content gets 'cleansed' out into just content
+    results = soup.prettify(soup)
 
 def enter_arg():
     # This is where the user will type in the site when they enter in the terminal
