@@ -5,12 +5,12 @@ import argparse
 
 def get_content(argurl):
     # Where BeautifulSoup takes in the url data and html code
-    url = (argurl)
+    url = argurl
     page = urlopen(url)
     html = page.read().decode("utf-8", errors='ignore')
     global soup
     soup = BeautifulSoup(html, "html.parser")
-    return soup
+    return soup.text
 
 
 def enter_arg():
